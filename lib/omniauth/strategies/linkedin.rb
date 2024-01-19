@@ -128,9 +128,9 @@ module OmniAuth
       end
 
       def profile_endpoint
-        "/v2/me?projection=(#{ fields.join(',') })"
+        "/v2/userinfo?projection=(#{ fields.join(',') })"
       end
-      
+
       def token_params
         super.tap do |params|
           params.client_secret = options.client_secret
